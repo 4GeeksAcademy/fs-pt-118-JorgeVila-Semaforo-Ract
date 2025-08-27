@@ -9,24 +9,52 @@ import "../components/App.css"
 //create your first component
 const App = () => {
 
-const cambiaVerde =()=>{
+	const colorRojo = document.querySelector(".rojo");
+	const colorAmarillo = document.querySelector(".amarillo");
+	const colorVerde = document.querySelector(".verde");
 
-}
+
+	const cambiaRojo = () => {
+		colorRojo.style.boxShadow = "0 0 20px 7px yellow"
+		colorAmarillo.style.boxShadow = "none";
+		colorVerde.style.boxShadow = "none";
+
+	}
+
+
+	const cambiaAmarillo = () => {
+		colorRojo.style.boxShadow = "none";
+		colorAmarillo.style.boxShadow = "0 0 20px 7px yellow"
+		colorVerde.style.boxShadow = "none";
+
+	}
+
+
+	const cambiaVerde = () => {
+		colorRojo.style.boxShadow = "none";
+		colorAmarillo.style.boxShadow = "none";
+		colorVerde.style.boxShadow = "0 0 20px 7px yellow"
+
+	}
 
 	return (
 		<div className="text-center ">
-            <div className="Semaforo">
-				<div className="rojo"> 
-					
+
+			<div className="Semaforo">
+				<div className="rojo" onClick={cambiaRojo} >
+
 				</div>
-				<div className="amarillo"> 
-					
+				<div className="amarillo" onClick={cambiaAmarillo} >
+
 				</div>
-				<div onClick={cambiaVerde} className="verde">
-					
+				<div className="verde" onClick={cambiaVerde}  >
+
 				</div>
 			</div>
 
+			<div className="BarraSemaforo">
+
+			</div>
 		</div>
 	);
 };
